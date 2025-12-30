@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NA Innovations</title>
+    <link rel="stylesheet" href="karta.css" />
+    <link rel="stylesheet" href="nav.css">
+   
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="logo.png" type="png">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="footer.css">
+    <style>
+              body.dark-mode {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+
+#darkModeToggle{
+position: absolute;
+margin-left: 60px;
+border-radius: 20px ;
+background-color: transparent;
+color: white;
+border: 1px;
+display: grid;
+display: block;
+
+}
+.dark-mode footer{
+    background-color: #ffffff;
+    color: rgb(255, 0, 0);
+}
+.dark-mode .cricles{
+  background-color: #1d1d1d;
+}
+    </style>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="cricles">
+      <div class="circle circle_1"></div>
+      <div class="circle circle_2"></div>
+    </div>
+
+    <div class="card_group">
+      <div class="card">
+        <div class="logo">
+          <img src="https://api.logobank.uz/media/logos_png/Uzcard-01.png" alt="" />
+        </div>
+
+        <div class="chip">
+          <img src="./chip.png" alt="" />
+        </div>
+
+        <div class="number">5614 6827 7401 4098</div>
+        <div class="name">Amonov Nematullo</div>
+        
+
+        <div class="ring"></div>
+      </div>
+    </div>
+
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+      <div class="social-links">
+
+      </div>
+      
+<ul class="nav-links">
+  <li><button id="darkModeToggle" class="btn100"><img id="img1" src="sun.png" alt="" style="width: 30px; display: grid;"></button></li>
+  <li><a href="index.html" style="margin-left: -825px; position: absolute;">Bosh sahifa</a></li>
+  <li><a href="karta.html" style="color: #ffdd57; margin-left: -744px; position: absolute;">Kredit karta</a></li>
+  <li><a href="registr.html" style="margin-left: -1290px; margin-top: 10px;">Kirish</a></li>
+</ul>
+<div class="hamburger">&#9776;</div>
+
+</nav>
+<div class="container">
+
+<!-- NAVBAR TUGASHI -->
+
+
+    <div class="container">
+
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+
+<footer>
+  <div class="footer-container19"data-aos="fade-up" style="margin-top: 1275px;">
+      <p>&copy; 2025 NA Innovations tomonidan barcha huquqlar himoyalangan.</p>
+      <div class="social-icons19">
+          <a href="https://instagram.com" target="_blank" class="a1"><i class="fab fa-instagram"></i></a>
+          <a href="https://t.me" target="_blank" class="a2"><i class="fab fa-telegram"></i></a>
+          <a href="https://youtube.com" target="_blank" class="a3"><i class="fab fa-youtube"></i></a>
+          <a href="https://github.com" target="_blank" class="a4"><i class="fab fa-github"></i></a>
+      </div>
+  </div>
+</footer>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("darkModeToggle");
+    const body = document.body;
+
+    // Saqlangan rejimni olish
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+    }
+
+    toggleButton.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+
+        // Holatini saqlash
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            document.getElementById("img1").src = "moon (1).png"
+
+        } else {
+
+            document.getElementById("img1").src = "sun.png"
+            localStorage.setItem("theme", "light");
+        }
+    });
+});
+
+
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.rating').forEach(rating => {
+            const stars = rating.querySelectorAll('input');
+            let selectedStar = null;
+
+            stars.forEach(star => {
+                star.addEventListener('change', () => {
+                    selectedStar = star;
+                });
+            });
+
+            rating.addEventListener('click', (event) => {
+                if (selectedStar && event.target.htmlFor === selectedStar.id) {
+                    selectedStar.checked = false;
+                    selectedStar = null;
+                }
+            });
+        });
+</script>
+  </body>
+</html>

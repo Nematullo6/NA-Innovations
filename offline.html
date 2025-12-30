@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NA Innovations</title>
+  <link rel="shortcut icon" href="logo.png" type="png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #000000;
+      text-align: center;
+      padding: 50px;
+    }
+
+      img{
+      width: 700px;
+      margin-top: -26px;
+     }
+    
+     .h1{
+      margin-left: 670px;
+      margin-top: 10px;
+      position: absolute;
+     }
+     .h2{
+      position: absolute;
+      margin-left: 636px;
+      margin-top: 35px;
+     }
+
+    #speed {
+      font-size: 28px;
+      margin: 20px 0;
+      margin-top: -110px;
+    }
+
+    #status {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #2575fc;
+      border: none;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1b5edc;
+    }
+
+    #loading {
+      font-style: italic;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    @media (max-width: 884px) {
+      img{
+        width: 350px;
+        margin-left: -55px;
+        margin-top: 25px;
+      }
+      .h1{
+        margin-left: 80px;
+      }
+      .h2{
+        margin-left: 40px;
+      }
+      #speed{
+        font-size: 22px;
+        margin-top: -65px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="h1">4 0 4</h1>
+  <h1 class="h2">E  R R O R</h1>
+  <img src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" alt="">
+  <div id="speed">O‘lchanmoqda...</div>
+  <div id="status">Online status: O‘lchanmoqda...</div>
+  <a href="index.html"><button>Saytga qaytish</button></a>
+  <div id="loading"></div>
+
+  <script>
+    async function testSpeed() {
+      const speedDiv = document.getElementById("speed");
+      const loading = document.getElementById("loading");
+
+      const imageUrl =
+        "https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg"; // 5MB
+      const fileSizeInBytes = 5242880;
+
+      speedDiv.innerText = "O‘lchanmoqda...";
+      loading.innerText = "";
+
+      const startTime = new Date().getTime();
+      try {
+        const response = await fetch(imageUrl + "?cache=" + Math.random(), {
+          cache: "no-cache"
+        });
+        await response.blob();
+        const endTime = new Date().getTime();
+
+        const duration = (endTime - startTime) / 1000;
+        const bitsLoaded = fileSizeInBytes * 8;
+        const speedMbps = (bitsLoaded / duration / 1024 / 1024).toFixed(2);
+
+        speedDiv.innerText = `Hozirgi tezlik: ${speedMbps} Mbps`;
+      } catch (err) {
+        speedDiv.innerText = "Iltimos internet ulanganligini tekshiring";
+      }
+    }
+
+    // Online/offline holatini tekshirish va ko'rsatish
+    function updateOnlineStatus() {
+      const statusDiv = document.getElementById("status");
+      if (navigator.onLine) {
+        statusDiv.innerText = "Online status: Ulanilgan";
+        statusDiv.style.color = "green"; // Online bo'lsa, yashil rangda
+      } else {
+        statusDiv.innerText = "Online status: Ulanilmagan";
+        statusDiv.style.color = "red"; // Offline bo'lsa, qizil rangda
+      }
+    }
+
+    // Avtomatik boshlanish
+    testSpeed();
+    updateOnlineStatus();
+
+    // Har 10 soniyada avtomatik o'lchash va online/offline holatini tekshirish
+    setInterval(() => {
+      testSpeed();
+      updateOnlineStatus();
+    }, 10000);
+
+    // Online/offline holatini tekshirish uchun voqeani tinglash
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+  </script>
+</body>
+</html>

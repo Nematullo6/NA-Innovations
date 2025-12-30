@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NA Innovations</title>
+  <link rel="stylesheet" href="bomba.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="logo.png" type="png">
+</head>
+<body>
+  <div class="game-header">
+    <h1>Sirli o'yin</h1>
+    <p>Bu o'yin sirli unga faqat saytdagi rasmni bosib kirish mumkin. <br> o'yinda 2000$ yig'ing va sayt kodlariga almashtiring. <br>1000$ taga shu o'yin kodlarini olish mumkin.Qancha mina bo'lsa o'shanga qarab $ olasiz. <br> o'yinda promokod mavjud.Promokodni olish uchun o'ylash kerak: <br> bizni oldingi mashinamizni nomeri 141 edi hozirgisi 025 <br> meni yilim 2011 va oxirida 12345678gacha raqam bor omad.</p>
+    <p id="balance"><img src="bomb.png" alt="">: $10</p>
+    <p id="timer">Vaqt: 0s</p>
+    
+     <div class="promo-section">
+        <input type="text" id="promo-input" placeholder="Promokodni kiriting">
+        <button onclick="checkPromoCode()">Tasdiqlash</button>
+    </div>
+    
+    <label >Minelar soni: <input type="number" id="mines-input" value="5" min="1" max="24"></label>
+   
+        
+    <button onclick="startGame()" class="button">Yangi O'yin</button>
+
+
+  </div>
+
+  <div id="board" class="board"></div>
+
+  <div class="card13">
+    <h2>Sayt kodi</h2>
+    <ul>
+        <li>2000$</li>
+        <div class="rating">
+            <input type="radio" id="star5-blok9" name="rating-blok9" value="5">
+            <label for="star5-blok9">★</label>
+            <input type="radio" id="star4-blok9" name="rating-blok9" value="4">
+            <label for="star4-blok9">★</label>
+            <input type="radio" id="star3-blok9" name="rating-blok9" value="3">
+            <label for="star3-blok9">★</label>
+            <input type="radio" id="star2-blok9" name="rating-blok9" value="2">
+            <label for="star2-blok9">★</label>
+            <input type="radio" id="star1-blok9" name="rating-blok9" value="1">
+            <label for="star1-blok9">★</label>
+        </div>
+    </ul>
+    <a download="" href="NA Innovations.rar" class="btn13 download-btn" data-cost="2000">Yuklash</a>
+</div>
+
+<div class="card12">
+    <h2>O'yin kodi</h2>
+    <ul>
+        <li>1000$</li>
+        <div class="rating">
+            <input type="radio" id="star5-blok9" name="rating-blok9" value="5">
+            <label for="star5-blok9">★</label>
+            <input type="radio" id="star4-blok9" name="rating-blok9" value="4">
+            <label for="star4-blok9">★</label>
+            <input type="radio" id="star3-blok9" name="rating-blok9" value="3">
+            <label for="star3-blok9">★</label>
+            <input type="radio" id="star2-blok9" name="rating-blok9" value="2">
+            <label for="star2-blok9">★</label>
+            <input type="radio" id="star1-blok9" name="rating-blok9" value="1">
+            <label for="star1-blok9">★</label>
+        </div>
+    </ul>
+    <a download="" href="Bomba.rar" class="btn13 download-btn" data-cost="1000">Yuklash</a>
+</div>
+
+
+  <script src="bomba.js"></script>
+</body>
+</html>

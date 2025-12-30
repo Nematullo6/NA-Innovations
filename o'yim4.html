@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="o'yin4.css">
+    <script src="o'yin4.js" defer></script>
+    <link rel="shortcut icon" href="logo.png" type="png">
+    <title>NA Innovations</title>
+</head>
+<body>
+
+<canvas id="game"></canvas>
+
+<svg width="200" height="250" id="windmill">
+  <defs>
+    <path id="arm" d="M -7 -20 C -7 -10 7 -10 7 -20 L 2 -80 L -2 -80" />
+  </defs>
+  <g transform="translate(100, 100)">
+    <g id="windmill-head">
+      <circle r="8"></circle>
+      <use href="#arm" />
+      <use href="#arm" transform="rotate(+120)" />
+      <use href="#arm" transform="rotate(-120)" />
+    </g>
+  </g>
+  <path
+    transform="translate(100, 0)"
+    d="M -7 250 L 7 250 L 3 115 L -3 115"
+  ></path>
+</svg>
+
+<div id="wind-info">Shamol tezligi: <span id="wind-speed">0</span></div>
+
+<div id="info-left">
+  <h3><span class="name">O'yinchi</span></h3>
+  <p>Burchak: <span class="angle">0</span>°</p>
+  <p>Tezlik: <span class="velocity">0</span></p>
+</div>
+
+<div id="info-right">
+  <h3><span class="name">Bot</span></h3>
+  <p>Burchak: <span class="angle">0</span>°</p>
+  <p>Tezlik: <span class="velocity">0</span></p>
+</div>
+
+<div id="instructions">
+  <h3 id="game-mode">O'yinchi vs. Bot</h3>
+  <h1>Nishonga olish uchun bombani torting!</h1>
+</div>
+
+<div id="bomb-grab-area"></div>
+
+<div id="congratulations">
+  <h1><span id="winner">?</span> yutdi!</h1>
+  <div class="dropdown">
+    <button class="dropbtn">Yangi o'yin</button>
+    <div class="dropdown-content">
+      <a href="#" class="single-player">Yaka o'yinchi</a>
+      <a href="#" class="two-players">Ikki-o'yinchi</a>
+      <a href="#" class="auto-play">Avtomatik o'yin</a>
+    </div>
+  </div>
+</div>
+
+<div id="settings">
+  <div class="dropdown">
+    <button class="dropbtn">Yangi o'yin</button>
+    <div class="dropdown-content">
+      <a href="#" class="single-player">Yaka o'yinchi</a>
+      <a href="#" class="two-players">Ikki-o'yinchi</a>
+      <a href="#" class="auto-play">Avtomatik o'yin</a>
+    </div>
+  </div>
+
+  <button id="color-mode">Qorong'u rejim</button>
+
+  <!-- <a
+    id="youtube"
+    href="https://youtu.be/2q5EufbUEQk?si=w2Himy4oN99AQeks"
+    target="_top" 
+  >
+    <span>See how this game was made</span>
+  </a>
+  <div id="youtube-card">
+    Learn How to Code This Game with Plain JavaScript and HTML Canvas
+  </div> -->
+</div>
+
+</body>
+</html>

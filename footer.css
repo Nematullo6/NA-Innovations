@@ -1,0 +1,61 @@
+footer {
+    background: #1d1d1d;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container19 {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.social-icons19 {
+    margin-top: 10px;
+}
+
+.social-icons19 a {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+.dark-mode .social-icons19 a{
+    color: rgb(0, 0, 0) ;
+}
+
+.dark-mode .social-icons19 .a1:hover{
+    color: #fe6f90; /* Hover effekti */
+}
+
+.dark-mode .social-icons19 .a2:hover{
+    color: #3d7ffa; /* Hover effekti */
+}
+
+.dark-mode .social-icons19 .a3:hover{
+    color: #ff2c3a; /* Hover effekti */
+}
+
+.dark-mode .social-icons19 .a4:hover{
+    color: #6a11cb; /* Hover effekti */
+}
+
+.a4:hover {
+    color: #6a11cb; /* Hover effekti */
+    
+}
+
+.a3:hover {
+    color: #ff2c3a; /* Hover effekti */
+}
+
+.a2:hover {
+    color: #3d7ffa; /* Hover effekti */
+}
+
+.a1:hover {
+    color: #fe6f90; /* Hover effekti */
+}
